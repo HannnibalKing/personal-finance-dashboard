@@ -1,65 +1,31 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="finance-shell">
+      <aside className="sidebar">
+        <p className="brand">LEDGER / 01</p>
+        <nav aria-label="Primary navigation">
+          <a className="active" href="#overview">Overview</a>
+          <a href="#activity">Activity</a>
+          <a href="#goals">Goals</a>
+        </nav>
+        <p className="sidebar-note">Personal finance workspace<br />Updated today at 09:42</p>
+      </aside>
+      <section className="content" id="overview">
+        <header className="topbar">
+          <div><p className="kicker">Tuesday, August 19</p><h1>Good morning, Taylor.</h1></div>
+          <button className="icon-button" aria-label="Open notifications">◎</button>
+        </header>
+        <section className="hero-grid" aria-label="Financial summary">
+          <article className="balance-panel"><p className="kicker">Available to spend</p><strong>$4,286.40</strong><p className="positive">↑ 8.4% from last month</p><div className="sparkline" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div></article>
+          <article className="metric"><span>Monthly income</span><strong>$8,420</strong><small>2 deposits</small></article>
+          <article className="metric"><span>Monthly spend</span><strong>$4,133</strong><small className="positive">$567 under plan</small></article>
+        </section>
+        <section className="lower-grid">
+          <article className="panel" id="activity"><div className="panel-heading"><div><p className="kicker">Cash flow</p><h2>Where your money moved</h2></div><span className="period">Last 30 days</span></div><div className="bars" aria-label="Cash flow chart"><i style={{ height: "38%" }} /><i style={{ height: "52%" }} /><i style={{ height: "44%" }} /><i style={{ height: "68%" }} /><i style={{ height: "57%" }} /><i style={{ height: "82%" }} /><i style={{ height: "74%" }} /><i style={{ height: "92%" }} /></div><div className="chart-labels"><span>Jul 23</span><span>Aug 19</span></div></article>
+          <article className="panel" id="goals"><div className="panel-heading"><div><p className="kicker">Goals</p><h2>Building momentum</h2></div><button className="text-button">Manage</button></div><div className="goal"><div><span>Emergency fund</span><strong>$6,800 <small>/ $10,000</small></strong></div><div className="progress"><i style={{ width: "68%" }} /></div><small>68% complete</small></div><div className="goal"><div><span>Japan trip</span><strong>$1,240 <small>/ $2,500</small></strong></div><div className="progress"><i style={{ width: "49%" }} /></div><small>49% complete</small></div></article>
+        </section>
+        <section className="panel transactions"><div className="panel-heading"><div><p className="kicker">Activity</p><h2>Recent transactions</h2></div><button className="text-button">View all</button></div><ul><li><span className="transaction-icon">M</span><span><strong>Metro Market</strong><small>Groceries · Today</small></span><b>-$82.14</b></li><li><span className="transaction-icon">S</span><span><strong>Sunset Software</strong><small>Salary · Yesterday</small></span><b className="positive">+$4,210.00</b></li><li><span className="transaction-icon">H</span><span><strong>Haven Utilities</strong><small>Home · Aug 16</small></span><b>-$126.80</b></li></ul></section>
+      </section>
+    </main>
   );
 }

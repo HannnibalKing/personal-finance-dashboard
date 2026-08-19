@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Finance Dashboard
+
+A responsive personal finance overview with available cash, monthly flow, savings goals, and recent transactions.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -14,15 +16,26 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The current screen is a UI baseline backed by fixture data. Add a repository/API layer before treating the figures as financial records.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The dashboard uses a restrained editorial finance layout and responsive CSS for desktop and mobile widths.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Validation
+
+```bash
+npm run build
+```
+
+## Production follow-up
+
+- Connect durable account and transaction storage.
+- Add authentication and authorization.
+- Add bank/provider adapters with stale-data handling.
+- Add browser interaction and visual regression tests.
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
